@@ -15,5 +15,12 @@
 <tr><td>hermes-agent v2026.8.18</td><td>default install curl-pipes an unpinned main-branch installer from a second repo (trycua/cua) for the computer-use driver, no tag, no checksum, and a telemetry id minted before the tool is ever enabled</td><td>bug</td><td>open, filed 2026-08-18</td><td><a href="https://github.com/NousResearch/hermes-agent/issues/89158">NousResearch/hermes-agent#89158</a></td></tr>
 <tr><td>hermes-agent v2026.8.18</td><td>installer's own UV_NO_CONFIG=1 export invalidates the exclude-newer settings recorded in uv.lock, the hash-verified locked sync fails and the install silently falls back to an unverified fresh PyPI resolve</td><td>confirmation</td><td>open, filed by another user 2026-08-16, our still-broken-on-latest repro + quarantine-bypass impact + downstream workaround added 2026-08-18</td><td><a href="https://github.com/NousResearch/hermes-agent/issues/82446#issuecomment-5328101036">NousResearch/hermes-agent#82446 (comment)</a></td></tr>
 </table>
+<h2>Earlier reports</h2>
+<p>Reported with an early version of this setup, before the current pipeline existed.</p>
+<table border="1">
+<tr><th>upstream</th><th>finding</th><th>type</th><th>status</th><th>report</th></tr>
+<tr><td>entire.io cli 0.4.8</td><td>session-log redaction misses database credentials, the gitleaks ruleset plus entropy fallback catches neither credentialed URIs (mongodb+srv://user:password@host) nor keyword DSNs, env-var password assignments and structured JSON password fields</td><td>security report</td><td>fixed, reported privately per SECURITY.md, vendor replaced the ruleset with betterleaks plus a generic credentialed-URI detector (#1043, merged 2026-04-27) and added the DB-specific layer (#1045, merged 2026-04-28)</td><td><a href="https://github.com/entireio/cli/pull/1043">entireio/cli#1043</a>, <a href="https://github.com/entireio/cli/pull/1045">entireio/cli#1045</a></td></tr>
+<tr><td>xterm #403</td><td>print() and print-everything() produce an empty file, an ifdef added for a compiler warning in #403 swallowed the fdopen of the printer pipe in print.c, regression from #402</td><td>bug</td><td>fixed, reported 2025-11-18 on the mailing list, maintainer patched the same day, released in #404 (2025-11-30) with credit</td><td><a href="https://invisible-island.net/xterm/xterm.log.html#xterm_404">xterm changelog #404</a></td></tr>
+</table>
 </body>
 </html>
